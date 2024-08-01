@@ -1,37 +1,15 @@
 <template>
   <div class="">
-    <input type="checkbox" name="" id="cbtn_agree">
-    <label for="cbtn_agree">동의</label>
+    <!-- 속성 연결 -->
+    <img src="https://borgssam.github.io/MySite/img/album_01.jpg" alt="">
     <br>
-    <label><input type="checkbox" name="" id="cbtn_agree" v-model="agree">동의</label>
+    <img v-bind:src='imgSrc' alt="" v-bind:title="imgTitle">
     <br>
-    <label>
-      <input type="checkbox" name="" id="cbtn_agree" v-model="agree2"
-      true-value='동의' false-value='비동의'>
-    {{agree2}}</label>
-    <br>
-  </div>
 
-  <div>
-    <p>토핑 추가</p>
-    <label><input type="checkbox" name="" id="" v-model="pizza" value="치즈">치즈</label>
-    <br>
-    <label><input type="checkbox" name="" id="" v-model="pizza" value="파인애플">파인애플</label>
-    <br>
-    <label><input type="checkbox" name="" id="" v-model="pizza" value="버섯">버섯</label>
-    <br>
-    <p>추가된 토핑: {{pizza}}</p>
-    <br>
-  </div>
-
-  <div>
-    <p>탕수육 취향</p>
-    <label><input type="radio" name="" id="" v-model="sourPork" value="부먹">부먹</label>
-    <br>
-    <label><input type="radio" name="" id="" v-model="sourPork" value="찍먹">찍먹</label>
-    <br>
-    <p>당신은 <span style="color: red">{{sourPork}}</span>파 입니다.</p>
-    <br>
+    <div>
+      <button :disabled="btn_01" :style="color_blue">버튼</button>
+      <button :disabled="btn_02" :style="color_red">버튼</button>
+    </div>
   </div>
 </template>
 
@@ -43,10 +21,12 @@ export default {
   },
   data() {
     return {
-      agree: false,
-      agree2: '비동의',
-      pizza: [],
-      sourPork: '부먹',
+      imgSrc: 'https://borgssam.github.io/MySite/img/album_01.jpg',
+      imgTitle: '가방든사람',
+      btn_01: true,
+      btn_02: false,
+      color_blue: {color: 'blue', fontSize: '24px'},
+      color_red: {color: 'red', fontSize: '24px'},
     };
   },
   methods: {
