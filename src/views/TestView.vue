@@ -1,30 +1,36 @@
 <template>
   <div class="">
-    <input type="text" name="" id="" value="333">
+    <input type="checkbox" name="" id="cbtn_agree">
+    <label for="cbtn_agree">동의</label>
     <br>
-    <!-- <input type="text" v-bind="nick"> -->
+    <label><input type="checkbox" name="" id="cbtn_agree" v-model="agree">동의</label>
     <br>
-    <input type="text" v-model="nick">
+    <label>
+      <input type="checkbox" name="" id="cbtn_agree" v-model="agree2"
+      true-value='동의' false-value='비동의'>
+    {{agree2}}</label>
     <br>
-    <input type="number" v-model.number="age">
+  </div>
+
+  <div>
+    <p>토핑 추가</p>
+    <label><input type="checkbox" name="" id="" v-model="pizza" value="치즈">치즈</label>
     <br>
-    <textarea name="" id="" cols="30" rows="10">깊은 산속 옹달샘은 썩은물</textarea>
+    <label><input type="checkbox" name="" id="" v-model="pizza" value="파인애플">파인애플</label>
     <br>
-    <textarea name="" id="" cols="30" rows="10" v-model="message"></textarea>
+    <label><input type="checkbox" name="" id="" v-model="pizza" value="버섯">버섯</label>
     <br>
-    <select name="" id="">
-      <option value="01">서울</option>
-      <option value="02" selected>대구</option>
-      <option value="03">부산</option>
-      <option value="04">수원</option>
-    </select>
+    <p>추가된 토핑: {{pizza}}</p>
     <br>
-    <select name="" id="" v-model="city">
-      <option value="01">서울</option>
-      <option value="02">대구</option>
-      <option value="03">부산</option>
-      <option value="04">수원</option>
-    </select>
+  </div>
+
+  <div>
+    <p>탕수육 취향</p>
+    <label><input type="radio" name="" id="" v-model="sourPork" value="부먹">부먹</label>
+    <br>
+    <label><input type="radio" name="" id="" v-model="sourPork" value="찍먹">찍먹</label>
+    <br>
+    <p>당신은 <span style="color: red">{{sourPork}}</span>파 입니다.</p>
     <br>
   </div>
 </template>
@@ -37,23 +43,11 @@ export default {
   },
   data() {
     return {
-      nick: '노래하는 범고래',
-      age: 30,
-      message: '깊은 산속 옹달샘은 썩은물',
-      city: '02',
+      agree: false,
+      agree2: '비동의',
+      pizza: [],
+      sourPork: '부먹',
     };
-  },
-  setup() {
-    
-  },
-  created() {
-    
-  },
-  mounted() {
-    
-  },
-  unmounted() {
-    
   },
   methods: {
     
