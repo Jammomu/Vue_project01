@@ -5,6 +5,7 @@
     <router-link to="/test">Test</router-link>
     <router-link to="/basic">3. Component(basic)</router-link>
     <router-link to="/SignUp">4. SignUp</router-link>
+    <router-link to="/DeepView">8. Component(deep)</router-link>
   </nav>
   <router-view/>
 </template>

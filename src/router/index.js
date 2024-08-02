@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import TestView from '../views/TestView.vue'
 import BasicView from '../views/BasicView.vue'
 import SignUpView from '../views/SignUpView.vue'
+import DeepView from '../views/DeepView.vue'
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     path: '/SignUp',
     name: 'SignUp',
     component: SignUpView
+  },
+  {
+    path: '/DeepView',
+    name: 'DeepView',
+    component: DeepView
   },
 ]
 

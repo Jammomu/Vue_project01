@@ -1,17 +1,19 @@
 <template>
-  <div class="">
-    <son-comp-10 ref="son10"/>
-    <son-comp-20 ref="son20"/>
-    <input type="button" value="할아버지 발작 버튼1" @click="clickGpapa10">
-    <input type="button" value="할아버지 발작 버튼2" @click="clickGpapa20">
+  <div class="son">
+    <!-- 내용을 추가하세요 -->
+    <p>첫째 아들 : {{message}}</p>
+    <gson-comp-11 ref="gson11"/>
+    <gson-comp-12 ref="gson12"/>
+    <button @click="clickSon11">첫째 아들 발작 버튼1</button>
+    <button @click="clickSon12">첫째 아들 발작 버튼2</button>
   </div>
 </template>
 
 <script>
-import SonComp10 from '@/components/SonComp10.vue';
-import SonComp20 from '@/components/SonComp20.vue';
+import GsonComp11 from './GsonComp11.vue';
+import GsonComp12 from './GsonComp12.vue';
 export default {
-  name: 'TestView',
+  name: 'SonComp10',
   props: {
     // 문자열 타입의 prop 예시
     //sampleString: {
@@ -35,13 +37,14 @@ export default {
     //}
   },
   components: {
-    SonComp10,
-    SonComp20,
+    GsonComp11,
+    GsonComp12,
     // 추가적으로 사용할 컴포넌트들을 등록합니다.
   },
   data() {
     return {
       // 컴포넌트의 데이터를 초기화합니다.
+      message: '',
     };
   },
   watch: {
@@ -57,11 +60,18 @@ export default {
     // 필요한 계산된 속성을 정의합니다.
   },
   methods: {
-    clickGpapa10() {
-      // 아들들의 둘째 손자를 호출해서 글씨를 파란색으로 바꾸기
-      this.$refs.son10.changeTextColor(2, 'blue');
-      this.$refs.son20.changeTextColor(2, 'blue');
-    }
+    clickSon11() {
+      this.message= '첫째 아들 발작 버튼 ON';
+      this.$refs.gson11.clickMsg();
+    },
+    clickSon12() {
+      this.message= '첫째 아들 발작 버튼 ON';
+      this.$refs.gson12.clickMsg();
+    },
+    changeTextColor(idx, data){
+      this.$refs.gson11.changeTextColor(idx, data);
+      this.$refs.gson12.changeTextColor(idx, data);
+    },
     // 컴포넌트에서 사용할 메서드를 정의합니다.
   },
   setup() {
@@ -81,4 +91,12 @@ export default {
 
 <style scoped>
 /* 스타일을 추가하세요 */
+.son{
+  background-color: moccasin;
+  margin: 20px;
+  padding: 20px;
+}
+.gson{
+  background-color: yellow;
+}
 </style>

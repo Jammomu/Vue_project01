@@ -1,47 +1,53 @@
 <template>
   <div class="">
-    <son-comp-10 ref="son10"/>
-    <son-comp-20 ref="son20"/>
-    <input type="button" value="할아버지 발작 버튼1" @click="clickGpapa10">
-    <input type="button" value="할아버지 발작 버튼2" @click="clickGpapa20">
+    <h2>Page Title</h2>
+    <p>제목 : {{title}}</p>
+    <p>나이 : {{age}}</p>
+    <p>취미 : {{hobbies}}</p>
+    <p>부 : {{family.papa}}, 모 : {{family.mama}}</p>
+    <p>함수 : {{func()}}</p>
   </div>
 </template>
 
 <script>
-import SonComp10 from '@/components/SonComp10.vue';
-import SonComp20 from '@/components/SonComp20.vue';
 export default {
-  name: 'TestView',
+  name: 'PageTitle',
   props: {
     // 문자열 타입의 prop 예시
-    //sampleString: {
-    //  type: String,
-    //  default: ''
-    //},
+    title: {
+     type: String,
+     default: '제목없음'
+    },
     // 숫자 타입의 prop 예시
-    //sampleNumber: {
-    //  type: Number,
-    //  default: 0
-    //},
+    age: {
+     type: Number,
+     default: 0
+    },
     // 배열 타입의 prop 예시
-    //sampleArray: {
-    //  type: Array,
-    //  default: () => []
-    //},
+    hobbies: {
+     type: Array,
+     default: () => ['게임', '낚시']
+    },
     // 객체 타입의 prop 예시
-    //sampleObject: {
-    //  type: Object,
-    //  default: () => ({})
-    //}
+    family: {
+     type: Object,
+     default: () => ({})
+    },
+    // 함수 타입의 prop 예시
+    func: {
+      type: Function,
+      default: function(){
+        return '기본 자식 함수';
+      }
+    }
   },
   components: {
-    SonComp10,
-    SonComp20,
     // 추가적으로 사용할 컴포넌트들을 등록합니다.
   },
   data() {
     return {
       // 컴포넌트의 데이터를 초기화합니다.
+      funcName: '',
     };
   },
   watch: {
@@ -57,11 +63,9 @@ export default {
     // 필요한 계산된 속성을 정의합니다.
   },
   methods: {
-    clickGpapa10() {
-      // 아들들의 둘째 손자를 호출해서 글씨를 파란색으로 바꾸기
-      this.$refs.son10.changeTextColor(2, 'blue');
-      this.$refs.son20.changeTextColor(2, 'blue');
-    }
+    // sample3() {
+    //   return '';
+    // }
     // 컴포넌트에서 사용할 메서드를 정의합니다.
   },
   setup() {
