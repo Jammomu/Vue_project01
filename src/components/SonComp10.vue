@@ -8,6 +8,7 @@
     <button @click="clickSon11">첫째 아들 발작 버튼1</button>
     <button @click="clickSon12">첫째 아들 발작 버튼2</button>
     <button @click="clickSon13">첫째 아들 발작 버튼3</button>
+    {{ gpapaMin }}
   </div>
 </template>
 
@@ -50,6 +51,7 @@ export default {
       sendMessage: '',
     };
   },
+  inject : ['gpapaMin'],
   watch: {
     // sample1() {
     //   console.log('');

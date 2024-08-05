@@ -13,6 +13,11 @@ import SonComp10 from '@/components/SonComp10.vue';
 import SonComp20 from '@/components/SonComp20.vue';
 export default {
   name: 'DeepView2',
+  components: {
+    SonComp10,
+    SonComp20,
+    // 추가적으로 사용할 컴포넌트들을 등록합니다.
+  },
   props: {
     // 문자열 타입의 prop 예시
     //sampleString: {
@@ -35,16 +40,18 @@ export default {
     //  default: () => ({})
     //}
   },
-  components: {
-    SonComp10,
-    SonComp20,
-    // 추가적으로 사용할 컴포넌트들을 등록합니다.
-  },
   data() {
     return {
       // 컴포넌트의 데이터를 초기화합니다.
       sendmessage: '',
+      gpapaValues : [1, 2, 3],
     };
+  },
+  provide () {
+    return {
+      gpapaLen : this.gpapaValues.length,
+      gpapaMin : Math.min(...this.gpapaValues)
+    }
   },
   watch: {
     // sample1() {

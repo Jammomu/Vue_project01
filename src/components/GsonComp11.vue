@@ -4,12 +4,16 @@
     <p v-bind:style="{color: tcolor}">첫째 아들의 첫째 손자 : {{message}}</p>
     <input type="text" v-model="gsonMsg11">
     <button @click="clickMsg">장손 발작 버튼</button>
+    {{ gpapaLen }}
   </div>
 </template>
 
 <script>
 export default {
   name: 'GsonComp11',
+  components: {
+    // 추가적으로 사용할 컴포넌트들을 등록합니다.
+  },
   props: {
     // 문자열 타입의 prop 예시
     //sampleString: {
@@ -32,9 +36,6 @@ export default {
     //  default: () => ({})
     //}
   },
-  components: {
-    // 추가적으로 사용할 컴포넌트들을 등록합니다.
-  },
   data() {
     return {
       // 컴포넌트의 데이터를 초기화합니다.
@@ -44,6 +45,7 @@ export default {
       gsonMsg11: '',
     };
   },
+  inject : ['gpapaLen'],
   watch: {
     // sample1() {
     //   console.log('');

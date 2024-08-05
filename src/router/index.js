@@ -5,6 +5,10 @@ import BasicView from '../views/BasicView.vue'
 import SignUpView from '../views/SignUpView.vue'
 import DeepView from '../views/DeepView.vue'
 import DeepView2 from '../views/DeepView2.vue'
+import Calculator01 from '../views/CalculatorView01.vue'
+import Calculator02 from '../views/CalculatorView02.vue'
+import Calculator03 from '../views/CalculatorView03.vue'
+import Calculator04 from '../views/CalculatorView04.vue'
 
 const routes = [
   {
@@ -44,6 +48,26 @@ const routes = [
     path: '/DeepView2',
     name: 'DeepView2',
     component: DeepView2
+  },
+  {
+    path: '/CalculatorView01',
+    name: 'CalculatorView01',
+    component: Calculator01
+  },
+  {
+    path: '/CalculatorView02',
+    name: 'CalculatorView02',
+    component: Calculator02
+  },
+  {
+    path: '/CalculatorView03',
+    name: 'CalculatorView03',
+    component: Calculator03
+  },
+  {
+    path: '/CalculatorView04',
+    name: 'CalculatorView04',
+    component: Calculator04
   },
 ]
 

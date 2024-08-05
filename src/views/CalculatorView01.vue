@@ -1,55 +1,24 @@
 <template>
   <div class="">
-    <template-view>
-      <template v-slot:header>
-        <h1>팝업타이틀</h1>
-      </template>
-
-      <template v-slot:main>
-        <p>팝업컨텐츠1</p>
-        <p>팝업컨텐츠2</p>
-      </template>
-
-      <template v-slot:footer>
-        <button type="button">닫기</button>
-      </template>
-    </template-view>
+    <h3>CalculatorView01</h3>
+    <input type="text" v-model="num1" @keyup="plusNumbers"><span> + </span>
+    <input type="text" v-model="num2" @keyup="plusNumbers"><span> = </span>
+    <span>{{ result }}</span>
   </div>
 </template>
 
 <script>
-import TemplateView from './TemplateView.vue';
 export default {
-  name: 'SamplePop02',
+  name: 'CalculatorView01',
   components: {
-    TemplateView
     // 추가적으로 사용할 컴포넌트들을 등록합니다.
-  },
-  props: {
-    // 문자열 타입의 prop 예시
-    //sampleString: {
-    //  type: String,
-    //  default: ''
-    //},
-    // 숫자 타입의 prop 예시
-    //sampleNumber: {
-    //  type: Number,
-    //  default: 0
-    //},
-    // 배열 타입의 prop 예시
-    //sampleArray: {
-    //  type: Array,
-    //  default: () => []
-    //},
-    // 객체 타입의 prop 예시
-    //sampleObject: {
-    //  type: Object,
-    //  default: () => ({})
-    //}
   },
   data() {
     return {
       // 컴포넌트의 데이터를 초기화합니다.
+      num1 : 0,
+      num2 : 0,
+      result : 0,
     };
   },
   watch: {
@@ -66,9 +35,9 @@ export default {
   },
   methods: {
     // 컴포넌트에서 사용할 메서드를 정의합니다.
-    // sample3() {
-    //   return '';
-    // }
+    plusNumbers() {
+      this.result = Number(this.num1) + Number(this.num2);
+    }
   },
   setup() {
     // Vue 3 Composition API의 setup 함수에서 추가적인 로직을 처리할 수 있습니다.

@@ -7,6 +7,10 @@
     <router-link to="/SignUp">4. SignUp</router-link>
     <router-link to="/DeepView">8. Component(deep)</router-link>
     <router-link to="/DeepView2">8. Component(deep2)</router-link>
+    <router-link to="/CalculatorView01">9. Calculator01_API</router-link>
+    <router-link to="/CalculatorView02">9. Calculator02_API</router-link>
+    <router-link to="/CalculatorView03">9. Calculator03_API</router-link>
+    <router-link to="/CalculatorView04">9. Calculator04_API</router-link>
   </nav>
   <router-view/>
 </template>
