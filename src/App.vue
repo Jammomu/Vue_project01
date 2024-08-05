@@ -11,6 +11,9 @@
     <router-link to="/CalculatorView02">9. Calculator02_API</router-link>
     <router-link to="/CalculatorView03">9. Calculator03_API</router-link>
     <router-link to="/CalculatorView04">9. Calculator04_API</router-link>
+    <router-link to="/MixView">10. Mixin</router-link>
+    <router-link to="/UserView">11. vuex 예제1</router-link>
+    <router-link to="/MemberView">11. vuex 예제2</router-link>
   </nav>
   <router-view/>
 </template>
