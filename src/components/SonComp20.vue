@@ -1,7 +1,7 @@
 <template>
   <div class="son">
     <!-- 내용을 추가하세요 -->
-    <p>둘째 아들</p>
+    <p>둘째 아들 : {{message}}</p>
     <gson-comp-21 ref="gson21"/>
     <gson-comp-22 ref="gson22"/>
   </div>
@@ -42,7 +42,7 @@ export default {
   data() {
     return {
       // 컴포넌트의 데이터를 초기화합니다.
-
+      message: '',
     };
   },
   watch: {
@@ -61,6 +61,10 @@ export default {
     changeTextColor(idx, data){
       this.$refs.gson21.changeTextColor(idx, data);
       this.$refs.gson22.changeTextColor(idx, data);
+    },
+    changeSendmessage(sendGpapaMessage){
+      this.$refs.gson21.changeSendmessage(sendGpapaMessage);
+      this.$refs.gson22.changeSendmessage(sendGpapaMessage);
     },
     // 컴포넌트에서 사용할 메서드를 정의합니다.
   },

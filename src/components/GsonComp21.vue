@@ -1,7 +1,7 @@
 <template>
   <div class="gson">
     <!-- 내용을 추가하세요 -->
-    <p v-bind:style="{color: tcolor}">둘째 아들의 첫째 손자</p>
+    <p v-bind:style="{color: tcolor}">둘째 아들의 첫째 손자 : {{message}}</p>
   </div>
 </template>
 
@@ -38,6 +38,7 @@ export default {
       // 컴포넌트의 데이터를 초기화합니다.
       index: 1,
       tcolor: 'red',
+      message: '',
     };
   },
   watch: {
@@ -57,6 +58,9 @@ export default {
       if(this.index == idx){
         this.tcolor= data;
       }
+    },
+    changeSendmessage(sendGpapaMessage){
+      this.message = sendGpapaMessage;
     },
     // 컴포넌트에서 사용할 메서드를 정의합니다.
   },

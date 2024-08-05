@@ -3,9 +3,11 @@
     <!-- 내용을 추가하세요 -->
     <p>첫째 아들 : {{message}}</p>
     <gson-comp-11 ref="gson11"/>
-    <gson-comp-12 ref="gson12"/>
+    <gson-comp-12 ref="gson12" @event_report="receiveEvent"/>
+    <input type="text" v-model="sendMessage"><br>
     <button @click="clickSon11">첫째 아들 발작 버튼1</button>
     <button @click="clickSon12">첫째 아들 발작 버튼2</button>
+    <button @click="clickSon13">첫째 아들 발작 버튼3</button>
   </div>
 </template>
 
@@ -45,6 +47,7 @@ export default {
     return {
       // 컴포넌트의 데이터를 초기화합니다.
       message: '',
+      sendMessage: '',
     };
   },
   watch: {
@@ -54,7 +57,8 @@ export default {
     // 데이터를 감시하고 처리할 로직을 작성합니다.
   },
   computed: {
-    // sample2() {
+    // msg() {
+    //   this.message = this.$refs.gson11.gsonMsg11+'!!';
     //   return '';
     // }
     // 필요한 계산된 속성을 정의합니다.
@@ -71,6 +75,14 @@ export default {
     changeTextColor(idx, data){
       this.$refs.gson11.changeTextColor(idx, data);
       this.$refs.gson12.changeTextColor(idx, data);
+    },
+    clickSon13(){
+      this.message='첫째 아들이 발작 버튼 ON';
+      this.$refs.gson11.message= this.sendMessage;
+      this.$refs.gson12.message= this.sendMessage;
+    },
+    receiveEvent(data){
+      this.message = data;
     },
     // 컴포넌트에서 사용할 메서드를 정의합니다.
   },

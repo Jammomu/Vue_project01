@@ -6,32 +6,12 @@
     <router-link to="/basic">3. Component(basic)</router-link>
     <router-link to="/SignUp">4. SignUp</router-link>
     <router-link to="/DeepView">8. Component(deep)</router-link>
+    <router-link to="/DeepView2">8. Component(deep2)</router-link>
   </nav>
   <router-view/>
 </template>
 
 <style>
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-} */
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,15 +1,24 @@
 <template>
   <div class="">
-    <son-comp-10 ref="son10"/>
-    <son-comp-20 ref="son20"/>
-    <input type="button" value="할아버지 발작 버튼1" @click="clickGpapa10">
-    <input type="button" value="할아버지 발작 버튼2" @click="clickGpapa20">
+    <template-view>
+      <template v-slot:header>
+        <h1>팝업타이틀</h1>
+      </template>
+
+      <template v-slot:main>
+        <p>팝업컨텐츠1</p>
+        <p>팝업컨텐츠2</p>
+      </template>
+
+      <template v-slot:footer>
+        <button type="button">닫기</button>
+      </template>
+    </template-view>
   </div>
 </template>
 
 <script>
-import SonComp10 from '@/components/SonComp10.vue';
-import SonComp20 from '@/components/SonComp20.vue';
+import TemplateView from './TemplateView.vue';
 export default {
   name: 'TestView',
   props: {
@@ -35,8 +44,7 @@ export default {
     //}
   },
   components: {
-    SonComp10,
-    SonComp20,
+    TemplateView
     // 추가적으로 사용할 컴포넌트들을 등록합니다.
   },
   data() {
@@ -45,24 +53,22 @@ export default {
     };
   },
   watch: {
+    // 데이터를 감시하고 처리할 로직을 작성합니다.
     // sample1() {
     //   console.log('');
     // }
-    // 데이터를 감시하고 처리할 로직을 작성합니다.
   },
   computed: {
+    // 필요한 계산된 속성을 정의합니다.
     // sample2() {
     //   return '';
     // }
-    // 필요한 계산된 속성을 정의합니다.
   },
   methods: {
-    clickGpapa10() {
-      // 아들들의 둘째 손자를 호출해서 글씨를 파란색으로 바꾸기
-      this.$refs.son10.changeTextColor(2, 'blue');
-      this.$refs.son20.changeTextColor(2, 'blue');
-    }
     // 컴포넌트에서 사용할 메서드를 정의합니다.
+    // sample3() {
+    //   return '';
+    // }
   },
   setup() {
     // Vue 3 Composition API의 setup 함수에서 추가적인 로직을 처리할 수 있습니다.

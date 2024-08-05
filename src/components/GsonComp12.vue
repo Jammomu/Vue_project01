@@ -2,6 +2,8 @@
   <div class="gson">
     <!-- 내용을 추가하세요 -->
     <p v-bind:style="{color: tcolor}">첫째 아들의 둘째 손자 : {{message}}</p>
+    <input type="text" v-model="gsonMsg">
+    <input type="button" value="손자12" @click="clickGson12">
   </div>
 </template>
 
@@ -61,6 +63,9 @@ export default {
       if(this.index == idx){
         this.tcolor= data;
       }
+    },
+    clickGson12(){
+      this.$emit('event_report', this.gsonMsg);
     },
     // 컴포넌트에서 사용할 메서드를 정의합니다.
   },
